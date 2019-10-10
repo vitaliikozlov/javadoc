@@ -12,6 +12,7 @@ import java.awt.Color;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
 /**
@@ -93,6 +94,11 @@ public class loginRegister2 extends javax.swing.JFrame {
         jLabel4.setText("v 1.0.0");
 
         jButton1.setText("ok");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -112,6 +118,11 @@ public class loginRegister2 extends javax.swing.JFrame {
         });
 
         jButton2.setText("cancel");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -255,11 +266,35 @@ public class loginRegister2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+         String pass = String.valueOf(jPasswordField.getPassword());
+         
+         if(jComboBox_username.getSelectedItem().equals("user 1")&pass.trim().equals("1")||jComboBox_username.getSelectedItem().equals("user 2")&pass.trim().equals("2")||jComboBox_username.getSelectedItem().equals("user 3")&pass.trim().equals("3")||jComboBox_username.getSelectedItem().equals("user 4")&pass.trim().equals("4")){
+            mainDK s =new mainDK();
+          s.setVisible(true);} 
+         //else {
+            // JOptionPane.showMessageDialog(null, "Message", "Title", ERROR);
+        // }
+             
+           System.out.println("my.numberaddition2.loginRegister2.jButton1ActionPerformed()");
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+     if(jComboBox_username.equals(evt)             
+             ){
+         jPasswordField.setText("pass");
+     }
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
